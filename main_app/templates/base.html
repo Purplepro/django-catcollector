@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>catCollector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  </head>
+  <body>
+     <a href="/cats">
+         <h1>catcollector</h1>
+     </a>
+    <hr />
+        {% block content %}
+        {% endblock %}
+      <footer>
+        All Rights Reserved, catcollector 2021
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for cat in cats %}
+        <p>Name: {{ cat.name }}</p>
+        {% if cat.age > 0 %}
+            <p>Age: {{ cat.age }}</p>
+        {% else %}
+            <p>Age: Kitten</p>
+        {% endif %}
+        <hr />
+    {% endfor %}
+{% endblock %}
