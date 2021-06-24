@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+    <a href="/cats/create">Add a New Cat!</a>
+    <hr />
     {% for cat in cats %}
+      <a href='/cats/{{cat.id}}'>
         <p>Name: {{ cat.name }}</p>
+      </a>
+      <a href='/user/{{cat.user.username}}'>
+        <p>Adopted By: {{cat.user.username}}</p>
+      </a>
         {% if cat.age > 0 %}
-            <p>Age: {{ cat.age }}</p>
+          <p>Age: {{ cat.age }}</p>
         {% else %}
-            <p>Age: Kitten</p>
+          <p>Age: Kitten</p>
         {% endif %}
         <hr />
-    {% endfor %}
+        {% endfor %}
 {% endblock %}

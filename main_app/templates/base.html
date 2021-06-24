@@ -7,9 +7,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
   </head>
   <body>
-     <a href="/cats">
-         <h1>catcollector</h1>
-     </a>
+    <header>
+      {% if user.is_authenticated %}
+      <span><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
+      <span> | </span>
+      <span><a href="{% url 'logout' %}">Logout</a></span>
+      <span> | </span>
+      {% else %}
+      <span><a href="{% url 'login' %}">Login</a></span>
+      <span> | </span>
+      <span><a href="{% url 'signup' %}">SignUp</a></span>
+      {% endif %}
+      <a href="/cats">
+          <h1>catcollector</h1>
+      </a>
+    </header>
     <hr />
         {% block content %}
         {% endblock %}

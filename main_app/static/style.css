@@ -2,3 +2,13 @@ h1 {
     font-weight: bold;
     border: 2px solid blueviolet;
 }
+
+
+.L-form {
+    width: 500px !important;
+}
+
+.login-form-div {
+    background-color: navajowhite !important;
+    width: 100px;
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cat Toy Details</h1>
+
+<div>
+    <span>{{ cattoy.name }}</span>
+    <p>Color: {{ cattoy.color }}</p>
+    <p>Owned by:</p>
+    {% for cat in cattoy.cat_set.all %}
+        <p>{{cat.name}}</p>
+    {% empty %}
+        <p>Nobody Has This Toy</p>
+    {% endfor %}
+</div>
+{% endblock %}
